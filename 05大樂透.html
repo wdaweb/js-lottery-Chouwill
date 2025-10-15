@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let repeatArray = [];
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      document.write("B 區:", getRandomInt(8) + 1 + "<br>");
+      //   B 區 1~8 取 1 個數字
+
+      for (let i = 0; i < 6; i++) {
+        // document.write("A 區:", getRandomInt(38) + 1 + "<br>");
+        let num = getRandomInt(38) + 1;
+        let repeat = false; // 不要重複
+        for (let j = 0; j < repeatArray.length; j++) {
+          if (repeatArray[j] === num) {
+            repeat = true;
+          }
+        }
+
+        if (repeat == true) {
+          i--;
+        } else {
+          console.log("A 區:", repeatArray.push(num));
+          document.write("A 區:", num + "<br>");
+        }
+      }
+    </script>
+  </body>
+</html>
